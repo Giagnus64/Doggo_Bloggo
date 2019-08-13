@@ -1,0 +1,19 @@
+<div class="post_container">
+    <h2><%=@post.title%></h2>
+    <h4>Filed Under:
+    <% @post.categories.each do |category| %>
+    <span class="categories"><%= link_to category.name + " ", category %></span>
+    <% end %>
+
+    <p><%=@post.content%></p>
+
+    <div class="author">
+    <a href="/doggos/<%= @post.doggo.id %>"><h3><img src="<%= @post.doggo.img_url %>" alt="Author Pic"><%=@post.doggo.name %>, <span class="breed_inline"><%= @post.doggo.breed %></span> </h3></a>
+    </div>
+</div>
+
+<br>
+<%= link_to "Edit Post", controller: "posts", action:"edit", id:@post%>
+<br>
+<br>
+<%=button_to "Delete Post", @post, method: :delete%>

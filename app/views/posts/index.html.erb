@@ -1,0 +1,17 @@
+<% @posts.each do |post|%>
+
+<div class="post_container">
+    <h2><%=link_to post.title, post%></h2>
+    <h4>Filed Under:
+    <% post.categories.each do |category| %>
+    <span class="categories"><%= link_to category.name + " ", category %></span>
+    <% end %>
+    </h4>
+
+    <p><%=post.content%></p>
+
+    <div class="author">
+    <a href="/doggos/<%= post.doggo.id %>"><h3><img src="<%= post.doggo.img_url %>" alt="Author Pic"><%=post.doggo.name %>, <span class="breed_inline"><%= post.doggo.breed %></span> </h3></a>
+    </div>
+</div>
+<% end %>

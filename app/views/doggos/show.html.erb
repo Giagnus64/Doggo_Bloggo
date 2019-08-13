@@ -1,0 +1,9 @@
+<div class="doggo-container">
+    <h2><%=@doggo.name%></h2>
+    <img src="<%= @doggo.img_url%>" alt="Doggo Profile Pic">
+    <h4>Breed:<%= @doggo.breed %></h4>  
+</div>
+
+<%= link_to "Edit This Doggo", edit_doggo_path(@doggo) %>
+<br><br>
+<%= button_to "Delete Doggo", {action: "destroy", id: @doggo.id}, method: :delete, data: {confirm: "Are u sure u wanna delet dis doggo?"} %>

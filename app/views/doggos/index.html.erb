@@ -1,0 +1,11 @@
+<h1>Doggos:</h1>
+
+<% @doggos.each do |doggo| %>
+
+<div class="doggo-container">
+    <h2><%= link_to doggo.name, doggo %></h2>
+    <%= link_to image_tag("#{doggo.img_url}"), doggo%>
+    <h4>Breed:<%= doggo.breed %></h4>  
+</div>
+
+<% end %>
